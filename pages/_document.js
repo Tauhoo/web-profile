@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from "next/document"
 import { ServerStyleSheet } from "styled-components"
-import { domain } from "../config"
+import { domain, common_font } from "../config"
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
