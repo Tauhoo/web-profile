@@ -58,6 +58,7 @@ const Title = styled.div`
   font-family: ${art_font};
   font-size: 98px;
   color: white;
+  margin-bottom: 10px;
   @media (max-width: 700px) {
     font-size: 72px;
   }
@@ -73,16 +74,31 @@ const TextItem = styled.div`
   font-family: ${common_font};
   font-size: 1rem;
   color: white;
+  width: max-content;
+  cursor: pointer;
+  span {
+    transition: 0.3s;
+    opacity: 0;
+  }
+  &:hover {
+    span {
+      opacity: 1;
+    }
+  }
 `
 
-export default ({ title, menu, image }) => (
+export default ({ title, menu, image, onGo }) => (
   <Container>
     <Layer z_index={0}>
       <Content>
         <Title>{title}</Title>
         <Menu>
-          {menu.map(({ name, callback }, index) => (
-            <TextItem key={index}>{name}</TextItem>
+          {menu.map((name, index) => (
+            <TextItem key={index} onClick={onGo ? () => onGo(index) : null}>
+              <span>{"{ "}</span>
+              {name}
+              <span>{" }"}</span>
+            </TextItem>
           ))}
         </Menu>
       </Content>

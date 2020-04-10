@@ -5,7 +5,7 @@ export default () => (
     <Banner
       title='Skill'
       image='/static/forest.jpg'
-      menu={[{ name: "Passion" }, { name: "Skill" }]}
+      menu={["Passion", "Skill"]}
     ></Banner>
   </>
 )
