@@ -1,0 +1,43 @@
+import Document, { Head, Main, NextScript } from "next/document"
+import { ServerStyleSheet } from "styled-components"
+import { domain } from "../config"
+
+export default class MyDocument extends Document {
+  render() {
+    const sheet = new ServerStyleSheet()
+    const main = sheet.collectStyles(<Main />)
+    const styleTags = sheet.getStyleElement()
+    return (
+      <html>
+        <Head>
+          <title>{domain}</title>
+          <link
+            href='https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap'
+            rel='stylesheet'
+          />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Nobile&display=swap'
+            rel='stylesheet'
+          />
+          <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1, shrink-to-fit=no'
+          />
+          <style>{`
+            body, html { 
+                margin: 0; 
+                font-size: 18px; 
+                padding: 0px !important;
+                overflow: unset !important;
+            }
+            `}</style>
+          {styleTags}
+        </Head>
+        <body>
+          <div className='root'>{main}</div>
+          <NextScript />
+        </body>
+      </html>
+    )
+  }
+}
