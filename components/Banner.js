@@ -9,8 +9,11 @@ import {
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 500px;
   position: relative;
+  @media (max-width: 700px) {
+    height: 350px;
+  }
 `
 
 const Layer = styled.div`
@@ -18,102 +21,74 @@ const Layer = styled.div`
   height: 100%;
   position: absolute;
   z-index: ${({ z_index }) => z_index};
+  ${({ image }) => (image ? `background: url(${image});` : "")}
+  background-size: cover;
   background-color: ${({ background_color }) => background_color};
 `
 
 const Background = styled.div`
-  width: 30%;
+  width: 500px;
   height: 100%;
   margin-left: 50%;
   background-color: ${secondary_color || "transparent"};
+  ${({ image }) => (image ? `background: url(${image});` : "")}
+  background-size: cover;
+  filter: hue-rotate(120deg);
+  @media (max-width: 1200px) {
+    width: 400px;
+  }
+  @media (max-width: 1000px) {
+    width: 300px;
+  }
   @media (max-width: 800px) {
     width: 50%;
   }
 `
 
 const Content = styled.div`
-  width: 100%;
-  height: 100%;
+  width: max-content;
   overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70px);
 `
 
 const Title = styled.div`
   font-family: ${art_font};
-  font-size: 144px;
-  margin-top: 250px;
-  text-align: center;
+  font-size: 98px;
   color: white;
-  @media (max-width: 800px) {
-    font-size: 98px;
-  }
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     font-size: 72px;
-  }
-  @media (max-width: 400px) {
-    font-size: 48px;
   }
 `
 
 const Menu = styled.div`
-  position: absolute;
-  transform: translateY(-50%);
-  top: 75%;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
-  @media (max-width: 800px) {
-    top: 60%;
-  }
 `
-const Item = styled.div`
+const TextItem = styled.div`
   font-family: ${common_font};
-  display: flex;
-  align-items: center;
-`
-
-const Line = styled.div`
-  width: 25%;
-  height: 5px;
-  background-color: white;
-  display: inline-block;
-  @media (max-width: 800px) {
-    height: 2px;
-  }
-  @media (max-width: 600px) {
-    height: 1px;
-  }
-`
-
-const TextItem = styled.span`
-  font-size: 2rem;
+  font-size: 1rem;
   color: white;
-  margin-left: 20px;
-  @media (max-width: 800px) {
-    font-size: 1.5rem;
-  }
-  @media (max-width: 600px) {
-    font-size: 1rem;
-  }
 `
 
-export default ({ title, menu }) => (
+export default ({ title, menu, image }) => (
   <Container>
     <Layer z_index={0}>
       <Content>
         <Title>{title}</Title>
         <Menu>
-          {menu.map(({ name, callback }) => (
-            <Item>
-              <Line></Line>
-              <TextItem>{name}</TextItem>
-            </Item>
+          {menu.map(({ name, callback }, index) => (
+            <TextItem key={index}>{name}</TextItem>
           ))}
         </Menu>
       </Content>
     </Layer>
-    <Layer z_index={-1} background_color={primary_color}>
-      <Background></Background>
+    <Layer z_index={-1} background_color={primary_color} image={image}>
+      <Background image={image}></Background>
     </Layer>
   </Container>
 )

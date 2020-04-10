@@ -1,3 +1,12 @@
-import React from "react"
+import React, { Component } from "react"
 
-export default ({ Component, pageProps }) => <Component {...pageProps} />
+export default class extends Component {
+  render() {
+    const { Component, pageProps } = this.props
+    return (
+      <>
+        <Component {...pageProps} />
+      </>
+    )
+  }
+}
