@@ -5,7 +5,7 @@ import Title from "./Title"
 
 const Container = styled.div`
   width: 100%;
-  background-color: #e9e9e9;
+  background-color: ${({ background_color }) => background_color || "#e9e9e9"};
   padding: 50px 0px 20px 0px;
 `
 
@@ -15,13 +15,13 @@ const Paragraph = styled.div`
 
 export default class extends Component {
   render() {
-    const { index, topic, children } = this.props
+    const { index, topic, children, is_text, background_color } = this.props
     return (
-      <Container>
+      <Container background_color={background_color}>
         <Wrapper>
           <Title index={index}>{topic}</Title>
           <br></br>
-          <Paragraph>{children}</Paragraph>
+          {is_text ? <Paragraph>{children}</Paragraph> : children}
         </Wrapper>
       </Container>
     )

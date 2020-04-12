@@ -5,7 +5,7 @@ import Burger from "./Burger"
 import MenuListItem from "./MenuListItem"
 
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -20,7 +20,7 @@ const Container = styled.div`
 const MenuList = styled.div`
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: ${({ active }) => (active ? "0px" : "-100vh")};
   z-index: 998;
   transition: 0.3s;
