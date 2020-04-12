@@ -3,19 +3,7 @@ import Banner from "../components/Banner"
 import Paragraph from "../components/Paragraph"
 import TimeLine from "../components/TimeLine"
 
-const timeline = [
-  { value: 198, percent: 0 },
-  { value: 1998, percent: 10 },
-  { value: 1999, percent: 20 },
-  { value: 2000, percent: 30 },
-  { value: 2001, percent: 40 },
-  { value: 2001, percent: 50 },
-  { value: 1998, percent: 60 },
-  { value: 1998, percent: 70 },
-  { value: 1998, percent: 80 },
-  { value: 1998, percent: 90 },
-  { value: 1999, percent: 100 },
-]
+import { timeline_point } from "../contents/timeline"
 
 export default () => (
   <>
@@ -29,7 +17,7 @@ export default () => (
       I'm ice.
     </Paragraph>
     <Paragraph index='1' topic='Time Line' background_color='#ffff'>
-      <TimeLine details={timeline}></TimeLine>
+      <TimeLine details={timeline_point}></TimeLine>
     </Paragraph>
   </>
 )
