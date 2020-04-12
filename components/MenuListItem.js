@@ -33,6 +33,7 @@ const Line = styled.div`
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 1.5px;
 `
 
 export default ({ children }) => (
