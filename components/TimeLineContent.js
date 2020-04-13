@@ -8,6 +8,12 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const ContentContainer = styled.div`

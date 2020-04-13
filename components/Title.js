@@ -27,8 +27,8 @@ const Title = styled.div`
   }
 `
 export default ({ index, children, color, num_color }) => (
-  <Title>
+  <Title color={color}>
     <IndexContainer num_color={num_color}>{index}</IndexContainer>
-    <span color={color}>{children}</span>
+    <span>{children}</span>
   </Title>
 )

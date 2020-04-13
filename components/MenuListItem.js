@@ -17,6 +17,17 @@ const ChildContainer = styled.div`
   transform: translate(-50%, -50%);
   font-size: 72px;
   cursor: pointer;
+
+  @media (max-width: 700px) {
+    font-size: 48px;
+  }
+  @media (max-width: 500px) {
+    font-size: 36px;
+  }
+  @media (max-width: 350px) {
+    font-size: 28px;
+  }
+
   &:hover {
     div {
       width: 100%;

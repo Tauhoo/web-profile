@@ -11,17 +11,33 @@ const Container = styled.div`
 
 const Paragraph = styled.div`
   word-break: break-word;
+  ${({ color }) => `color: ${color};`}
 `
 
 export default class extends Component {
   render() {
-    const { index, topic, children, is_text, background_color } = this.props
+    const {
+      index,
+      topic,
+      children,
+      is_text,
+      background_color,
+      num_color,
+      title_color,
+      text_color,
+    } = this.props
     return (
       <Container background_color={background_color}>
         <Wrapper>
-          <Title index={index}>{topic}</Title>
+          <Title index={index} num_color={num_color} color={title_color}>
+            {topic}
+          </Title>
           <br></br>
-          {is_text ? <Paragraph>{children}</Paragraph> : children}
+          {is_text ? (
+            <Paragraph color={text_color}>{children}</Paragraph>
+          ) : (
+            children
+          )}
         </Wrapper>
       </Container>
     )

@@ -14,6 +14,9 @@ const Container = styled.div`
   @media (max-width: 700px) {
     height: 350px;
   }
+  @media (max-width: 450px) {
+    height: 300px;
+  }
 `
 
 const Layer = styled.div`
@@ -61,6 +64,10 @@ const Title = styled.div`
   margin-bottom: 10px;
   @media (max-width: 700px) {
     font-size: 72px;
+  }
+  @media (max-width: 450px) {
+    font-size: 48px;
+    margin-top: 15px;
   }
 `
 

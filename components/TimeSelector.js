@@ -48,7 +48,7 @@ const SelectorCircle = styled.div`
   left: ${({ left }) => left};
   border-style: solid;
   border-color: #c0392b;
-  z-index: 10;
+  z-index: 11;
   transition: 0.3s;
 `
 
