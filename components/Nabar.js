@@ -16,6 +16,9 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.3s;
+  background-color: ${({ visible, menu_active }) =>
+    visible && !menu_active ? "black" : "transparent"};
 `
 const MenuList = styled.div`
   width: 100%;
@@ -35,12 +38,35 @@ const MenuWrapper = styled.div`
   height: 100%;
 `
 export default class extends Component {
-  state = { menu_active: false }
+  state = { menu_active: false, visible: false }
+
+  update_visible_position = 3
+
+  onScroll = () => {
+    const top = document.documentElement.scrollTop
+    const { visible } = this.state
+    if (top <= this.update_visible_position && visible) {
+      this.setState({ visible: false })
+    } else if (top > this.update_visible_position && !visible) {
+      this.setState({ visible: true })
+    }
+  }
+
+  componentDidMount() {
+    if (typeof window === "undefined") return
+    window.addEventListener("scroll", this.onScroll)
+  }
+
+  componentWillUnmount() {
+    if (typeof window === "undefined") return
+    window.removeEventListener("scroll", this.onScroll)
+  }
+
   render() {
-    const { menu_active } = this.state
+    const { menu_active, visible } = this.state
     return (
       <>
-        <Container>
+        <Container visible={visible} menu_active={menu_active}>
           <Logo></Logo>
           <Burger
             active={menu_active}
