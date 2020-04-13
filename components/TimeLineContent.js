@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { art_font } from "../config"
 
 const Container = styled.div`
   min-height: 500px;
@@ -17,7 +16,7 @@ const Container = styled.div`
 `
 
 const ContentContainer = styled.div`
-  background-color: #e9e9e9;
+  background-color: white;
   width: 100%;
   height: max-content;
   padding-bottom: 20px;
@@ -26,7 +25,7 @@ const ContentContainer = styled.div`
 `
 
 const Title = styled.div`
-  background-color: black;
+  background-image: linear-gradient(to left, black 0%, #09203f 100%);
   font-size: 1.2rem;
   width: 100%;
   color: white;
@@ -44,7 +43,7 @@ const Paragraph = styled.div`
 
 const Button = styled.div`
   height: 40px;
-  background-color: black;
+  background-image: linear-gradient(to left, black 0%, #09203f 100%);
   border-radius: 20px;
   padding: 0px 20px;
   cursor: pointer;
@@ -67,6 +66,7 @@ const LinkContainer = styled.div`
 
 const Image = styled.img`
   width: 100%;
+  border-radius: 5px;
 `
 
 const ImageContainer = styled.div`

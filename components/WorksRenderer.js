@@ -4,12 +4,14 @@ import Work from "./Work"
 
 const Container = styled.div`
   width: 100%;
+  display: grid;
+  grid-gap: 20px;
 `
 
 export default ({ works }) => (
   <Container>
     {works.map((value, index) => (
-      <Work key={index} {...value} is_left={index % 2 === 0}></Work>
+      <Work key={index} {...value} is_left={true}></Work>
     ))}
   </Container>
 )

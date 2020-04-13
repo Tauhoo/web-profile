@@ -58,16 +58,17 @@ export default class MyDocument extends Document {
 
             /* width */
             ::-webkit-scrollbar {
-              width: 10px;
+              width: 8px;
             }
-
+            
             /* Track */
             ::-webkit-scrollbar-track {
-              background: linear-gradient( green, red);
+              background: linear-gradient(to top, #09203f 0%, #537895 100%);;
             }
             
             /* Handle */
             ::-webkit-scrollbar-thumb {
+              border-radius: 4px;
               background: black; 
             }
             `}</style>

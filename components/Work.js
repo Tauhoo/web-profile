@@ -1,14 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { art_font } from "../config"
 
 const Container = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: ${({ is_left }) =>
     is_left ? "300px 1fr" : "1fr 300px"};
-  color: white;
-  padding: 20px 0px;
   box-sizing: border-box;
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -17,6 +14,7 @@ const Container = styled.div`
 
 const Image = styled.img`
   width: 100%;
+  border-radius: 5px;
   @media (max-width: 900px) {
     display: none;
   }
@@ -30,9 +28,6 @@ const Content = styled.div`
 const Title = styled.div`
   width: 100%;
   font-size: 1.5rem;
-  border-style: solid;
-  border-width: 0px 0px 3px 0px;
-  border-color: white;
 `
 
 const Paragraph = styled.div`
@@ -41,7 +36,7 @@ const Paragraph = styled.div`
 
 const Button = styled.div`
   height: 40px;
-  background-color: white;
+  background-image: linear-gradient(to left, black 0%, #09203f 100%);
   border-radius: 20px;
   padding: 0px 20px;
   cursor: pointer;
@@ -49,7 +44,7 @@ const Button = styled.div`
   align-items: center;
   width: max-content;
   * {
-    color: #2d3436;
+    color: white;
     text-decoration: none;
   }
 `
@@ -65,12 +60,20 @@ const LinkContainer = styled.div`
   }
 `
 
+const Underline = styled.div`
+  background-color: black;
+  height: 4px;
+  border-radius: 2px;
+  width: 100%;
+  margin: 5px 0px 10px 0px;
+`
+
 export default ({ title, detail, link, image, is_left }) => (
   <Container is_left={is_left}>
     {is_left ? <Image src={image}></Image> : null}
     <Content>
       <Title>{title}</Title>
-      <br></br>
+      <Underline></Underline>
       <Paragraph>{detail}</Paragraph>
       {link ? (
         <LinkContainer is_left={is_left}>

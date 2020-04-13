@@ -28,7 +28,12 @@ const MenuList = styled.div`
   top: ${({ active }) => (active ? "0px" : "-100vh")};
   z-index: 998;
   transition: 0.3s;
-  background: linear-gradient(270deg, #5e49ff, #ff5a5a);
+  background-image: linear-gradient(
+    60deg,
+    #3b41c5 0%,
+    #a981bb 49%,
+    #ffc8a9 100%
+  );
   padding: 100px 0px;
   box-sizing: border-box;
 `

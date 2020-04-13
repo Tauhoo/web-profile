@@ -15,23 +15,17 @@ export default () => (
       menu={["Who's me?", "Time Line", "Works"]}
       onGo={(index) => console.log(index)}
     ></Banner>
-    <Paragraph index='0' topic="Who's me ?" is_text>
+    <Paragraph index='0' topic="Who's me ?" is_text background_color='#ffff'>
       Tincidunt vitae semper quis lectus nulla at volutpat diam ut Mattis nunc
       sed blandit libero volutpat sed cras ornare arcuNon curabitur gravida arcu
       ac tortor dignissim convallis aenean et Iaculis urna id volutpat lacus
       laoreet non curabitur gravida arcu Ut porttitor leo a diam sollicitudin
       tempor id eu nisl.
     </Paragraph>
-    <Paragraph index='1' topic='Time Line' background_color='#ffff'>
+    <Paragraph index='1' topic='Time Line'>
       <TimeLine details={timeline_point}></TimeLine>
     </Paragraph>
-    <Paragraph
-      index='2'
-      topic='Time Line'
-      background_color='#850000'
-      num_color='#2F3640'
-      title_color='white'
-    >
+    <Paragraph index='2' topic='Time Line' background_color='#ffff'>
       <WorksRenderer works={works}></WorksRenderer>
     </Paragraph>
   </>

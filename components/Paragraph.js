@@ -5,7 +5,7 @@ import Title from "./Title"
 
 const Container = styled.div`
   width: 100%;
-  background-color: ${({ background_color }) => background_color || "#e9e9e9"};
+  background: ${({ background_color }) => background_color || "#f6f8f8"};
   padding: 50px 0px 50px 0px;
 `
 

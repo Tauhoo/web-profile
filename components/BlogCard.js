@@ -4,11 +4,16 @@ import { tags_conversion } from "../contents/blogs"
 import moment from "moment"
 
 const Container = styled.div`
-  background-color: black;
+  background-image: linear-gradient(
+    80deg,
+    #dad4ec 0%,
+    #dad4ec 1%,
+    #f3e7e9 100%
+  );
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  border-radius: 3px;
+  border-radius: 5px;
   transition: 0.3s;
 `
 
@@ -22,11 +27,12 @@ const Badge = styled.div`
   vertical-align: middle;
   border-radius: 12px;
   margin: 0px 10px;
+  color: white;
 `
 
 const Title = styled.div`
   width: 100%;
-  color: white;
+  color: #09203f;
   display: grid;
   grid-template-columns: max-content 1fr max-content;
   align-items: center;
@@ -40,7 +46,7 @@ const TitleText = styled.div`
 
 const Paragrah = styled.div`
   width: 100%;
-  color: white;
+  color: #09203f;
   word-break: break-word;
   line-height: 25px;
 `
@@ -49,7 +55,7 @@ const Underline = styled.div`
   height: 2px;
   border-radius: 1px;
   width: 100%;
-  background-color: white;
+  background-color: #09203f;
   margin: 10px 0px 15px 0px;
 `
 

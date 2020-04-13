@@ -43,13 +43,18 @@ const ProgressBar = styled.div`
   height: 15px;
   border-radius: 7.5px;
   overflow: hidden;
-  box-shadow: 0 5px 15px 0 rgba(7, 33, 66, 0.15);
+  background-color: white;
 `
 
 const Bar = styled.div`
   width: ${({ percent }) => percent}%;
   height: 100%;
-  background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a);
+  background-image: linear-gradient(
+    to right,
+    #3ab5b0 0%,
+    #3d99be 31%,
+    #56317a 100%
+  );
   border-radius: 10px;
 `
 

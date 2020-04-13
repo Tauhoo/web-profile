@@ -4,7 +4,7 @@ import Wrapper from "./Wrapper"
 
 const Container = styled.div`
   width: 100%;
-  background-color: black;
+  background-image: linear-gradient(to right, black 0%, #09203f 100%);
   padding: 30px 0px;
   color: white;
 `

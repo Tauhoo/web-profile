@@ -4,7 +4,7 @@ import styled from "styled-components"
 const IndexContainer = styled.div`
   display: inline-block;
   border-radius: 50%;
-  background-color: ${({ num_color }) => num_color || "#c0392b"};
+  background-color: ${({ num_color }) => num_color || "#09203f"};
   width: 25px;
   height: 25px;
   font-size: 1.2rem;

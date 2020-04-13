@@ -18,7 +18,7 @@ const MainLine = styled.div`
   position: absolute;
   height: 3px;
   width: 100%;
-  background-color: #c4c4c4;
+  background-image: linear-gradient(to left, #09203f 0%, #537895 100%);
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
@@ -33,7 +33,7 @@ const Circle = styled.div`
   transform: translate(-50%, -50%);
   top: ${({ top }) => top};
   left: ${({ left }) => left};
-  background-color: ${({ background_color }) => background_color};
+  background: ${({ background_color }) => background_color};
   z-index: 10;
   transition: 0.3s;
 `
@@ -47,7 +47,7 @@ const SelectorCircle = styled.div`
   top: ${({ top }) => top};
   left: ${({ left }) => left};
   border-style: solid;
-  border-color: #c0392b;
+  border-color: black;
   z-index: 11;
   transition: 0.3s;
 `
@@ -66,7 +66,7 @@ const TimeLinePoint = ({ crop_details, step, onChange }) =>
       diameter='20px'
       top='50%'
       left={`${percent}%`}
-      background_color={index + 1 === step ? "#c0392b" : "#C4C4C4"}
+      background_color={index + 1 === step ? "black" : "#537895"}
       onClick={() => onChange(value, index + 1)}
     ></Circle>,
   ])
@@ -93,7 +93,7 @@ export default class extends Component {
             diameter='30px'
             top='50%'
             left='0px'
-            background_color={0 === step ? "#c0392b" : "#C4C4C4"}
+            background_color={0 === step ? "black" : "#537895"}
             onClick={() => this.onChange(this.details[0].value, 0)}
           ></Circle>
           <Circle
@@ -102,7 +102,7 @@ export default class extends Component {
             top='50%'
             left='100%'
             background_color={
-              this.details.length - 1 === step ? "#c0392b" : "#C4C4C4"
+              this.details.length - 1 === step ? "black" : "#537895"
             }
             onClick={() =>
               this.onChange(this.details[last_num].value, last_num)
