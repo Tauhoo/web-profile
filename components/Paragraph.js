@@ -12,6 +12,7 @@ const Container = styled.div`
 const Paragraph = styled.div`
   word-break: break-word;
   ${({ color }) => `color: ${color};`}
+  line-height: 25px;
 `
 
 export default class extends Component {

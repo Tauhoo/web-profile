@@ -39,6 +39,7 @@ const Paragraph = styled.div`
   color: white;
   box-sizing: border-box;
   word-break: break-word;
+  line-height: 25px;
 `
 
 const Button = styled.div`

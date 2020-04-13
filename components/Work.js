@@ -36,7 +36,9 @@ const Title = styled.div`
   border-color: white;
 `
 
-const Paragraph = styled.div``
+const Paragraph = styled.div`
+  line-height: 25px;
+`
 
 const Button = styled.div`
   height: 40px;
