@@ -28,6 +28,11 @@ const ChildContainer = styled.div`
     font-size: 28px;
   }
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   &:hover {
     div {
       width: 100%;
@@ -47,8 +52,8 @@ const Line = styled.div`
   border-radius: 1.5px;
 `
 
-export default ({ children }) => (
-  <Container>
+export default ({ children, onClick }) => (
+  <Container onClick={onClick}>
     <ChildContainer>
       {children}
       <Line></Line>

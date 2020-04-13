@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components"
 import Logo from "./Logo"
 import Burger from "./Burger"
 import MenuListItem from "./MenuListItem"
+import Link from "next/link"
 
 const Container = styled.div`
   position: fixed;
@@ -62,22 +63,40 @@ export default class extends Component {
     window.removeEventListener("scroll", this.onScroll)
   }
 
+  updateActive = (menu_active) => () => this.setState({ menu_active })
+
   render() {
     const { menu_active, visible } = this.state
     return (
       <>
         <Container visible={visible} menu_active={menu_active}>
-          <Logo></Logo>
+          <Link href='/'>
+            <a style={{ textDecoration: "none", color: "white" }}>
+              <Logo></Logo>
+            </a>
+          </Link>
           <Burger
             active={menu_active}
-            onClick={() => this.setState({ menu_active: !menu_active })}
+            onClick={this.updateActive(!menu_active)}
           ></Burger>
         </Container>
         <MenuList active={menu_active}>
           <MenuWrapper>
-            <MenuListItem>About Me</MenuListItem>
-            <MenuListItem>Skill</MenuListItem>
-            <MenuListItem>Blog</MenuListItem>
+            <MenuListItem onClick={this.updateActive(false)}>
+              <Link href='/'>
+                <a>About Me</a>
+              </Link>
+            </MenuListItem>
+            <MenuListItem onClick={this.updateActive(false)}>
+              <Link href='/skill'>
+                <a>Skill</a>
+              </Link>
+            </MenuListItem>
+            <MenuListItem onClick={this.updateActive(false)}>
+              <Link href='/blog'>
+                <a>Blog</a>
+              </Link>
+            </MenuListItem>
           </MenuWrapper>
         </MenuList>
       </>

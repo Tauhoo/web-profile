@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Navbar from "../components/Nabar"
 import styled from "styled-components"
 import { common_font } from "../config"
+import Footer from "../components/Footer"
 
 const Container = styled.div`
   font-family: ${common_font};
@@ -16,6 +17,7 @@ export default class extends Component {
       <Container>
         <Navbar></Navbar>
         <Component {...pageProps} />
+        <Footer></Footer>
       </Container>
     )
   }

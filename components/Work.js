@@ -30,7 +30,6 @@ const Content = styled.div`
 const Title = styled.div`
   width: 100%;
   font-size: 1.5rem;
-  font-family: ${art_font};
   border-style: solid;
   border-width: 0px 0px 3px 0px;
   border-color: white;

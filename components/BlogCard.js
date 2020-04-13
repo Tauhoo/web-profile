@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { tags_conversion } from "../contents/blogs"
 import moment from "moment"
 
-const Container = styled.a`
-  background-color: #2f3640;
+const Container = styled.div`
+  background-color: black;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -62,8 +62,6 @@ const LinkWrapper = styled.a`
   text-decoration: none;
   position: relative;
   width: 100%;
-  &:hover {
-  }
 `
 
 export default ({ title, detail, tags, link, timestamp }) => (

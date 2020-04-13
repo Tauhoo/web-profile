@@ -28,7 +28,7 @@ export default () => (
     <Paragraph
       index='2'
       topic='Time Line'
-      background_color='#9F4343'
+      background_color='#850000'
       num_color='#2F3640'
       title_color='white'
     >

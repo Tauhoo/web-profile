@@ -17,15 +17,16 @@ const Container = styled.div`
 `
 
 const ContentContainer = styled.div`
-  background-color: #d63031;
+  background-color: #e9e9e9;
   width: 100%;
   height: max-content;
   padding-bottom: 20px;
+  border-radius: 4px;
+  overflow: hidden;
 `
 
 const Title = styled.div`
-  background-color: #9f4343;
-  font-family: ${art_font};
+  background-color: black;
   font-size: 1.2rem;
   width: 100%;
   color: white;
@@ -36,7 +37,6 @@ const Title = styled.div`
 const Paragraph = styled.div`
   width: 100%;
   padding: 20px 20px 0px 20px;
-  color: white;
   box-sizing: border-box;
   word-break: break-word;
   line-height: 25px;

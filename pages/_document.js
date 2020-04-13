@@ -55,6 +55,21 @@ export default class MyDocument extends Document {
                 padding: 0px !important;
                 overflow: unset !important;
             }
+
+            /* width */
+            ::-webkit-scrollbar {
+              width: 10px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+              background: linear-gradient( green, red);
+            }
+            
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+              background: black; 
+            }
             `}</style>
           {styleTags}
         </Head>
